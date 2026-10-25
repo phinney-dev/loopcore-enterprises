@@ -42,19 +42,26 @@
       display: block;
       margin: 30px auto;
       opacity: 0.95;
-      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 25px rgba(255, 215, 0, 0.2));
+
+      filter:
+        drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 25px rgba(255, 215, 0, 0.2));
     }
 
     nav {
       margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 4px;
     }
 
     nav a {
       color: #ccc;
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
       font-size: 14px;
       cursor: pointer;
+      padding: 6px 0;
     }
 
     nav a:hover {
@@ -141,12 +148,14 @@
       background: #0a0a0a;
     }
 
+
     .footer-links {
       display: flex;
       flex-direction: column;
       gap: 10px;
       margin-bottom: 15px;
     }
+
 
     .footer-links a {
       color: #00e5ff;
@@ -157,6 +166,7 @@
     .footer-links a:hover {
       opacity: 0.7;
     }
+
 
     .footer-copy {
       color: #888;
@@ -173,8 +183,20 @@
       border-radius: 50%;
       font-size: 20px;
       text-decoration: none;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
       z-index: 1000;
+    }
+
+    a:focus-visible {
+      outline: 2px solid gold;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 10px; }
+      .logo { font-size: clamp(22px, 6vw, 34px); }
+      nav a { margin: 0 6px; font-size: 13px; }
+      section { padding: 28px 15px; }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -185,19 +207,22 @@
     <div class="logo">LOOPCORE ENTERPRISES</div>
 
     <nav>
-      <a class="active-link" onclick="showSection('home', this)">Home</a>
-      <a onclick="showSection('packages', this)">Internet</a>
-      <a onclick="showSection('devices', this)">Devices</a>
-      <a onclick="showSection('solutions', this)">Loopcore Solutions</a>
-      <a onclick="showSection('cyber', this)">Cyber services</a>
-      <a onclick="showSection('contact', this)">Contact</a>
+      <a class="active-link" href="#home" data-section="home">Home</a>
+      <a href="#packages" data-section="packages">Internet</a>
+      <a href="#devices" data-section="devices">Devices</a>
+      <a href="#solutions" data-section="solutions">Loopcore Solutions</a>
+      <a href="#cyber" data-section="cyber">Cyber services</a>
+      <a href="#contact" data-section="contact">Contact</a>
     </nav>
   </header>
 
   <!-- HOME -->
   <section id="home" class="active">
+
     <h2>WELCOME TO LOOPCORE ENTERPRISES</h2>
+
     <img src="logo.png" alt="Loopcore Logo" class="home-logo">
+
     <p style="line-height:1.8;">
       - Your trusted cyber services solutions.<br>
       - Best mobile software services <br>
@@ -205,116 +230,465 @@
       - Your gateway to a connected world.<br>
       - Enjoy seamless connectivity to the digital world with affordable plans.<br>
     </p>
-    <br>
+
     <h2>Reliable solutions & Smart Systems</h2>
     <p>High-speed internet, cyber services, networking and software solutions for homes and businesses.</p>
-  </section>
 
+  </section>
   <!-- PACKAGES -->
   <section id="packages">
+
     <h2>MONTHLY HOME UNLIMITED INTERNET PACKAGES</h2>
+
     <div class="grid">
+
       <div class="card">
         Unlimited up to 4 mbps + 5 Mbps speeds — <b style="color:#00e5ff">Ksh 1000</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 4 Mbps. Price: Ksh 1000">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 4 Mbps. Price: Ksh 1000">SMS</a>
+          <a class="btn whatsapp"
+            href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%204%20mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%201000" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms"
+            href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%204%20mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%201000">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 8 Mbps + 5 mbps speeds — <b style="color:#00e5ff">Ksh 1500</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 8 Mbps. Price: Ksh 1500">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 8 Mbps. Price: Ksh 1500">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%208%20Mbps%20%2B%205%20mbps%20speeds%20%E2%80%94%20Ksh%201500" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%208%20Mbps%20%2B%205%20mbps%20speeds%20%E2%80%94%20Ksh%201500">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 10 Mbps + 5 Mbps speeds — <b style="color:#00e5ff">Ksh 1800</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 10 Mbps. Price: Ksh 1800">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 10 Mbps. Price: Ksh 1800">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2010%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%201800" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2010%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%201800">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 15 Mbps + 5 Mbps speeds — <b style="color:#00e5ff">Ksh 2000</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 15 Mbps. Price: Ksh 2000">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 15 Mbps. Price: Ksh 2000">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2015%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%202000" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2015%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%202000">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 20 Mbps + 5 Mbps speeds — <b style="color:#00e5ff">Ksh 2500</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 20 Mbps. Price: Ksh 2500">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 20 Mbps. Price: Ksh 2500">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2020%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%202500" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2020%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%202500">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 40 Mbps + 5 Mbps speeds — <b style="color:#00e5ff">Ksh 3000</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 40 Mbps. Price: Ksh 3000">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 40 Mbps. Price: Ksh 3000">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2040%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%203000" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2040%20Mbps%20%2B%205%20Mbps%20speeds%20%E2%80%94%20Ksh%203000">
+            SMS
+          </a>
         </div>
       </div>
 
       <div class="card">
         Unlimited up to 80 Mbps speeds — <b style="color:#00e5ff">Ksh 5000</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Home Internet Package. Speed: 80 Mbps. Price: Ksh 5000">WhatsApp</a>
-          <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Home Internet Package. Speed: 80 Mbps. Price: Ksh 5000">SMS</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2080%20Mbps%20speeds%20%E2%80%94%20Ksh%205000" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2080%20Mbps%20speeds%20%E2%80%94%20Ksh%205000">
+            SMS
+          </a>
         </div>
       </div>
+
     </div>
 
     <br><br>
 
     <div class="business-section">
+
       <h2>MONTHLY BUSINESS INTERNET PACKAGES</h2>
+
       <div class="grid">
+
         <div class="card">
           Unlimited up to 10 Mbps — <b style="color:#00e5ff">Ksh 3000</b>
+
           <div class="actions">
-            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Business Internet Package. Speed: 10 Mbps. Price: Ksh 3000">WhatsApp</a>
-            <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Business Internet Package. Speed: 10 Mbps. Price: Ksh 3000">SMS</a>
+            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2010%20Mbps%20%E2%80%94%20Ksh%203000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2010%20Mbps%20%E2%80%94%20Ksh%203000">
+              SMS
+            </a>
           </div>
         </div>
 
         <div class="card">
           Unlimited up to 20 Mbps — <b style="color:#00e5ff">Ksh 6000</b>
+
           <div class="actions">
-            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am interested in the Business Internet Package. Speed: 20 Mbps. Price: Ksh 6000">WhatsApp</a>
-            <a class="btn sms" href="sms:+254794038671?body=Hello, I am interested in the Business Internet Package. Speed: 20 Mbps. Price: Ksh 6000">SMS</a>
+            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2020%20Mbps%20%E2%80%94%20Ksh%206000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2020%20Mbps%20%E2%80%94%20Ksh%206000">
+              SMS
+            </a>
           </div>
         </div>
+
+        <div class="card">
+          Unlimited up to 30 Mbps — <b style="color:#00e5ff">Ksh 9000</b>
+
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2030%20Mbps%20%E2%80%94%20Ksh%209000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2030%20Mbps%20%E2%80%94%20Ksh%209000">
+              SMS
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          Unlimited up to 50 Mbps — <b style="color:#00e5ff">Ksh 15000</b>
+
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2050%20Mbps%20%E2%80%94%20Ksh%2015000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%2050%20Mbps%20%E2%80%94%20Ksh%2015000">
+              SMS
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          Unlimited up to 100 Mbps — <b style="color:#00e5ff">Ksh 20000</b>
+
+          <div class="actions">
+            <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%20100%20Mbps%20%E2%80%94%20Ksh%2020000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+
+            <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Unlimited%20up%20to%20100%20Mbps%20%E2%80%94%20Ksh%2020000">
+              SMS
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </section>
 
   <!-- DEVICES -->
   <section id="devices">
-    <h2>DEVICES & NETWORKING HARDWARE</h2>
-    <p>High-quality routers, networking switchboards, and connection hardware available upon order request.</p>
-    <br>
+
+    <h2>NETWORKING DEVICES</h2>
+
     <div class="grid">
+
       <div class="card">
-        Dual-Band Wi-Fi Router
+        Receiver — <b style="color:#00e5ff">price will be shared upon request based on current market price</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am inquiring about the Dual-Band Router.">WhatsApp</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Receiver%20%E2%80%94%20price%20will%20be%20shared%20upon%20request%20based%20on%20current%20market%20price" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Receiver%20%E2%80%94%20price%20will%20be%20shared%20upon%20request%20based%20on%20current%20market%20price">SMS</a>
         </div>
       </div>
+
       <div class="card">
-        Fiber Optic Cables & Drop Cables
+        Home Router — <b style="color:#00e5ff">price will be shared upon request based on current market price</b>
+
         <div class="actions">
-          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello, I am inquiring about Fiber Cables.">WhatsApp</a>
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Home%20Router%20%E2%80%94%20price%20will%20be%20shared%20upon%20request%20based%20on%20current%20market%20price" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Home%20Router%20%E2%80%94%20price%20will%20be%20shared%20upon%20request%20based%20on%20current%20market%20price">SMS</a>
         </div>
       </div>
+
     </div>
+
+  </section>
+  <!-- LOOPCORE SOLUTIONS -->
+  <section id="solutions">
+
+    <h2>LOOPCORE SOLUTIONS</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        📱 Mobile phone software repairs and/or upgrade/downgrade —
+        <b style="color:#00e5ff">Ksh 3500</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%93%B1%20Mobile%20phone%20software%20repairs%20and%2For%20upgrade%2Fdowngrade%20%E2%80%94%20Ksh%203500" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%93%B1%20Mobile%20phone%20software%20repairs%20and%2For%20upgrade%2Fdowngrade%20%E2%80%94%20Ksh%203500">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        PC 🖥️ / laptop 💻 software repairs and/or upgrade/downgrade —
+        <b style="color:#00e5ff">Ksh 500</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20PC%20%F0%9F%96%A5%EF%B8%8F%20%2F%20laptop%20%F0%9F%92%BB%20software%20repairs%20and%2For%20upgrade%2Fdowngrade%20%E2%80%94%20Ksh%20500" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20PC%20%F0%9F%96%A5%EF%B8%8F%20%2F%20laptop%20%F0%9F%92%BB%20software%20repairs%20and%2For%20upgrade%2Fdowngrade%20%E2%80%94%20Ksh%20500">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        Mobile phone screen lock (pattern, password) and FRP removal —
+        <b style="color:#00e5ff">Ksh 500-1000</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Mobile%20phone%20screen%20lock%20%28pattern%2C%20password%29%20and%20FRP%20removal%20%E2%80%94%20Ksh%20500-1000" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20Mobile%20phone%20screen%20lock%20%28pattern%2C%20password%29%20and%20FRP%20removal%20%E2%80%94%20Ksh%20500-1000">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        🔓 Android phone rooting —
+        <b style="color:#00e5ff">Ksh 500</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%94%93%20Android%20phone%20rooting%20%E2%80%94%20Ksh%20500" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%94%93%20Android%20phone%20rooting%20%E2%80%94%20Ksh%20500">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        🌐 Internet Services (WiFi)
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%8C%90%20Internet%20Services%20%28WiFi%29" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%8C%90%20Internet%20Services%20%28WiFi%29">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        🛠 Internet troubleshooting —
+        <b style="color:#00e5ff">Negotiable based on complexity and fairness</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%9B%A0%20Internet%20troubleshooting%20%E2%80%94%20Negotiable%20based%20on%20complexity%20and%20fairness" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%9B%A0%20Internet%20troubleshooting%20%E2%80%94%20Negotiable%20based%20on%20complexity%20and%20fairness">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        🛠 Networking technician —
+        <b style="color:#00e5ff">Negotiable based on workload and fairness</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%9B%A0%20Networking%20technician%20%E2%80%94%20Negotiable%20based%20on%20workload%20and%20fairness" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%9B%A0%20Networking%20technician%20%E2%80%94%20Negotiable%20based%20on%20workload%20and%20fairness">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        📡 Internet installations & repairs —
+        <b style="color:#00e5ff">Negotiable based on workload and fairness</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%93%A1%20Internet%20installations%20%26%20repairs%20%E2%80%94%20Negotiable%20based%20on%20workload%20and%20fairness" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%93%A1%20Internet%20installations%20%26%20repairs%20%E2%80%94%20Negotiable%20based%20on%20workload%20and%20fairness">
+            SMS
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        💬 Consultation —
+        <b style="color:#00e5ff">Ksh 100 for 30 minutes</b>
+
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%92%AC%20Consultation%20%E2%80%94%20Ksh%20100%20for%2030%20minutes" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+
+          <a class="btn sms" href="sms:+254794038671?body=Hello%20Loopcore%20Enterprises%2C%20I%20am%20enquiring%20about%3A%20%F0%9F%92%AC%20Consultation%20%E2%80%94%20Ksh%20100%20for%2030%20minutes">
+            SMS
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <h2>CONTACT</h2>
+    <p>+254 794 038 671</p>
+
   </section>
 
-  <!-- SOLUTIONS -->
-  <section id="solutions">
+  <!-- CYBER -->
+  <section id="cyber">
+
+    <h2>CYBER SERVICES</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        Printing & Photocopy
+      </div>
+
+      <div class="card">
+        KRA Services
+      </div>
+
+      <div class="card">
+        NTSA Services
+      </div>
+
+      <div class="card">
+        Education: Assignments, Projects, Research Papers, HELB,KUCCPS etc
+      </div>
+
+
+      <div class="card">
+        Passport Application
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="aup.html">Acceptable Use Policy</a>
+      <a href="sla.html">Service Level Agreement</a>
+      <a href="refund.html">Refund Policy</a>
+      <a href="force-majeure.html">Force Majeure</a>
+      <a href="governing-law.html">Governing Law (Kenya)</a>
+    </div>
+
+    © 2026 LOOPCORE ENTERPRISES. All rights reserved.
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/254794038671?text=Hello%20Loopcore%20Enterprises%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">💬</a>
+
+  <script>
+    function showSection(id, el) {
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      document.querySelectorAll("main section, body > section").forEach(sec => {
+        sec.classList.toggle("active", sec.id === id);
+      });
+
+      document.querySelectorAll("nav a[data-section]").forEach(link => {
+        link.classList.toggle("active-link", link.dataset.section === id);
+      });
+
+      if (history.replaceState) history.replaceState(null, "", "#" + id);
+    }
+
+    document.querySelectorAll("nav a[data-section]").forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        showSection(this.dataset.section, this);
+      });
+    });
+
+    function activateFromHash() {
+      const id = location.hash.slice(1);
+      if (id && document.getElementById(id) && document.getElementById(id).tagName === "SECTION") {
+        showSection(id);
+      }
+    }
+    window.addEventListener("hashchange", activateFromHash);
+    activateFromHash();
+  </script>
+
+</body>
+
+</html>
